@@ -1,4 +1,6 @@
-import {createStore, combineReducers, applyMiddleware} from 'redux';
+import {createStore, combineReducers, applyMiddleware } from 'redux';
+import { createForms } from 'react-redux-form';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
@@ -11,7 +13,7 @@ export const ConfigureStore = () => {
             ...createForms({
             })
         }),
-        applyMiddleware(thunk, logger)
+        composeWithDevTools(applyMiddleware(thunk, logger))
     );
     return store;
 }

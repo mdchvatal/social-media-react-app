@@ -1,4 +1,9 @@
+import React, { Component } from 'react';
+import { Switch, Route, withRouter } from 'react-router-dom';
+import {connect} from 'react-redux';
 import {fetchTimeline} from '../redux/actionCreators';
+import Timeline from './Timeline';
+
 
 const mapStateToProps = (state) => {
 	return {
@@ -7,7 +12,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchTimeline: (userName) => dispatch(fetchTimeline(userName))
+        fetchTimeline: () => dispatch(fetchTimeline())
     }
 }
 
@@ -15,6 +20,20 @@ class MainComponent extends Component{
 
     constructor(props) {
       	super(props);
+    }
+
+    componentWillUnmount() {
+        
+    }
+
+    render() {
+        return (
+            <div>
+                <Switch>
+                    <Route path='/' component={() => <Timeline/>}/>
+                </Switch>
+            </div>
+        );
     }
 }
 
