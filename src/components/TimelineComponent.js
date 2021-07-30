@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {fetchTimeline} from '../redux/actionCreators';
-import Post from './Post';
+import Post from './PostComponent';
 
 const mapStateToProps = (state) => {
 	return {
@@ -28,15 +28,17 @@ class Timeline extends Component {
 
     render() {
         return(
-            <div className='container'>
-                {this.props.timelineData.timeline.map((message) => {
-                        return (
-                            <Post key={message.id}
-                                message={message.message} 
-                                date={message.date} 
-                                user={message.user.userName}/>);
-                    }
-                )}
+            <div class="container">
+                <div className="row col-md-6 offset-md-3">
+                    {this.props.timelineData.timeline.map((message) => {
+                            return (
+                                <Post key={message.id}
+                                    message={message.message} 
+                                    date={message.date} 
+                                    user={message.user.userName}/>);
+                        }
+                    )}
+                </div>
             </div>
         );
     }

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import {connect} from 'react-redux';
 import {fetchTimeline} from '../redux/actionCreators';
-import Timeline from './Timeline';
+import Timeline from './TimelineComponent';
+import Header from './HeaderComponent';
 
 
 const mapStateToProps = (state) => {
@@ -28,11 +29,12 @@ class MainComponent extends Component{
 
     render() {
         return (
-            <div>
+            <>
+                <Header/>
                 <Switch>
                     <Route path='/' component={() => <Timeline/>}/>
                 </Switch>
-            </div>
+            </>
         );
     }
 }
