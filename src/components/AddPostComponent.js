@@ -2,7 +2,8 @@ import { Component } from "react";
 import {Card, CardBody, CardText, CardTitle, Button} from 'reactstrap';
 import { Control, Form, Errors } from 'react-redux-form';
 import {connect} from 'react-redux';
-import {fetchTimeline, addPost} from '../redux/actionCreators';
+import {fetchTimeline, addPost, addPostCompleted} from '../redux/actionCreators';
+import { actions } from 'react-redux-form';
 
 const mapStateToProps = (state) => {
 	return {
@@ -14,7 +15,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchTimeline: () => dispatch(fetchTimeline()),
-        addPost: (message) => dispatch(addPost(message))
+        addPost: (message) => dispatch(addPost(message)),
+        resetPostForm: () => { dispatch(actions.reset('addPost'))},
+        postComplete: () => dispatch(addPostCompleted())
     }
 }
 
@@ -33,23 +36,22 @@ class AddPost extends Component {
         console.log("Submit values: " + values);
         this.props.addPost(values.postText);
         this.setState({submit: true});
-        if (this.props.messageData.messageData.status === 'succeeded'){
-            this.props.fetchTimeline();
-        }
+        this.props.resetPostForm();
     }
 
     render() {
         return(
             <>
-                <Card>
-                    <CardBody>
-                        <Form model="addPost" onSubmit={(values) => this.handleSubmit(values)}>
+                <Card id='addPostCard' style={{ borderRadius: 0 }}>
+                    <Form model="addPost" onSubmit={(values) => this.handleSubmit(values)}>
+                        <CardBody>
                             <Control.text model=".postText" id="postText" name="postText"
                                         placeholder="What would you like to share?"
                                         className="form-control"/>
-                        </Form>
-                    </CardBody>
-                    <Button type="submit" color="primary">Rage</Button>
+                    
+                        </CardBody>
+                        <Button type="submit">Ring the Bell</Button>
+                    </Form>
                 </Card>
             </>
         );

@@ -9,10 +9,10 @@ class Post extends Component {
   render() {
       return(
           <>
-            <Card>
+            <Card style={{ borderRadius: 0 }}>
                 <CardTitle className="row justify-content-between">
-                    <div className="col-4">{this.props.user}</div>
-                    <div className="col-4" id="dateDisplay">{this.props.date}</div>
+                    <div className="col-1">{this.props.user}</div>
+                    <div className="col" id="dateDisplay">{this.props.date}</div>
                 </CardTitle>
                 <CardBody>
                     <CardText>

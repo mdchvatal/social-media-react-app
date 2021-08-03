@@ -13,7 +13,7 @@ export const TimelineData = (state = {
     }, action) => {
     switch (action.type) {
         case ActionTypes.FETCH_USER_TIMELINE_SUCCEEDED:
-            return {...state, errorMessage: null, status: 'succeeded', timeline: action.payload};
+            return {...state, errorMessage: null, status: 'succeeded', timeline: action.payload.sort((a, b) => (a.date < b.date) ? 1 : -1)};
 
         case ActionTypes.FETCH_USER_TIMELINE_FAILED:
             return {...state, errorMessage: action.payload, status: 'failed', timeline: []};

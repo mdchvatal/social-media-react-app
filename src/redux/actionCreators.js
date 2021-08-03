@@ -33,3 +33,10 @@ export const addPostSucceeded = (response) => (
         payload: response
     }
 )
+
+export const addPostCompleted = () => (
+    {
+        type: ActionTypes.ADD_POST_COMPLETE
+    }
+)
+    

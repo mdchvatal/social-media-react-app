@@ -30,7 +30,7 @@ class MainComponent extends Component{
     render() {
         return (
             <>
-                <Header/>
+                <Header background-color='white !important'/>
                 <Switch>
                     <Route path='/' component={() => <Timeline/>}/>
                 </Switch>

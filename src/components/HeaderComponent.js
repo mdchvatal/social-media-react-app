@@ -11,25 +11,23 @@ class Header extends Component {
 
     render() {
         return(
-            <div class="container">
-                <div className="row">
-                    <Navbar light>
-                            <NavbarToggler onClick={this.toggleNav} />
-                            <NavbarBrand className="mr-auto" href="/">
-                                <img className='row' src="/duck.png" height="50" width="50" alt="logo" />
-                            </NavbarBrand>
-                            <Collapse navbar>
-                                <Nav navbar>
-                                    <NavItem>
-                                        <NavLink className="nav-link" to="/home">  
-                                            <span className="fa fa-home fa-lg"></span>Home
-                                        </NavLink>
-                                    </NavItem>
-                                </Nav>
-                            </Collapse>
-                    </Navbar>
-                </div>
-            </div>
+            <>
+                <Navbar light>
+                        <NavbarToggler onClick={this.toggleNav} />
+                        <NavbarBrand className="mr-auto" href="/">
+                            <img className='row' src="/bell.png" height="60" width="60" alt="logo" />
+                        </NavbarBrand>
+                        <Collapse navbar>
+                            <Nav navbar>
+                                <NavItem>
+                                    <NavLink className="nav-link" to="/home">  
+                                        <span className="fa fa-home fa-lg"></span>Home
+                                    </NavLink>
+                                </NavItem>
+                            </Nav>
+                        </Collapse>
+                </Navbar>
+            </>
         );
     }
 }
