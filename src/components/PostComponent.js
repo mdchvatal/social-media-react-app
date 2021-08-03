@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Card, CardBody, CardText, Container, CardTitle} from 'reactstrap';
+import {Card, CardBody, CardText, CardTitle} from 'reactstrap';
 
 class Post extends Component {
     constructor(props) {
@@ -12,7 +12,7 @@ class Post extends Component {
             <Card>
                 <CardTitle className="row justify-content-between">
                     <div className="col-4">{this.props.user}</div>
-                    <div className="col-4">{this.props.date}</div>
+                    <div className="col-4" id="dateDisplay">{this.props.date}</div>
                 </CardTitle>
                 <CardBody>
                     <CardText>

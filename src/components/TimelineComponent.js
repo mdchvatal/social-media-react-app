@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {fetchTimeline} from '../redux/actionCreators';
+import {fetchTimeline, addPost} from '../redux/actionCreators';
+import AddPost from './AddPostComponent';
 import Post from './PostComponent';
 
 const mapStateToProps = (state) => {
@@ -10,18 +11,15 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchTimeline: () => dispatch(fetchTimeline())
+        fetchTimeline: () => dispatch(fetchTimeline()),
+        addPost: (message) => dispatch(addPost(message))
     }
 }
 
 class Timeline extends Component {
 
-    constructor(props) {
-        super(props);  
-    }
-
     componentDidMount() {
-        if (!(this.props.timelineData.status == 'succeeded')) {
+        if (!(this.props.timelineData.status === 'succeeded')) {
             this.props.fetchTimeline();
         }
     }
@@ -30,6 +28,7 @@ class Timeline extends Component {
         return(
             <div class="container">
                 <div className="row col-md-6 offset-md-3">
+                    <AddPost addPost={this.props.addPost} fetchTimeline={this.props.fetchTimeline}/>
                     {this.props.timelineData.timeline.map((message) => {
                             return (
                                 <Post key={message.id}

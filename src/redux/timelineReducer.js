@@ -4,14 +4,10 @@ export const TimelineData = (state = {
         errorMessage: null,
         status: 'idle',
         timeline: [{
-            "id": 1,
-            "user": {
-                "id": 1,
-                "followers": [],
-                "userName": "matt"
-            },
-            "message": "Isn't everything so WONDERFUL?!",
-            "date": "2021-07-30T19:26:02.000+00:00",
+            "id": 0,
+            "user": {},
+            "message": "Tell the world about anything!",
+            "date": new Date().toLocaleDateString(),
             "comments": []
         }]
     }, action) => {

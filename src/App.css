@@ -1,17 +1,11 @@
 
+#root {
+  background-color:whitesmoke;
+  height: 100%;
+}
 
-.jumbotron {
-  padding:50px 30px;
-  margin:0px auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: left !important;
-  background-size: cover;
-  width: 1;
-  
-  color:black !important;
-
+html {
+  background-color: whitesmoke;
 }
 
 .navbar navbar-expand-md navbar-light{
@@ -50,4 +44,8 @@
   align-items: flex-end;
   justify-content: flex-end;
   margin-top: -2.5rem;
+}
+
+#dateDisplay {
+  color:grey;
 }
