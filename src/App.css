@@ -13,6 +13,17 @@ html {
   
 }
 
+#semaphoreButton{
+  margin-left: 1ch;
+  padding-left: 1ch;
+  margin-bottom: 1ch;
+}
+
+#footerItem{
+  color: grey;
+  padding-bottom: 1ch;
+}
+
 .navbar navbar-expand-md navbar-light{
   position: absolute;
   background-color: rgb(23, 53, 226);

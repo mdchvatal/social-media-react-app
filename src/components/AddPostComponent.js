@@ -50,7 +50,13 @@ class AddPost extends Component {
                                         className="form-control"/>
                     
                         </CardBody>
-                        <Button type="submit">Ring the Bell</Button>
+                        <div className="container-fluid">
+                            <div className="row flex">
+                                <Button type="submit" className="col-md-auto" id="semaphoreButton">Semaphore</Button>
+                            </div>
+                        </div>
+                        
+                        
                     </Form>
                 </Card>
             </>
