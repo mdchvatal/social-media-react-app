@@ -19,8 +19,13 @@ html {
   margin-bottom: 1ch;
 }
 
+.navbar-light{
+  margin-left: 1.5ch;
+  margin-right: 1.5ch;
+}
+
 #footerItem{
-  color: grey;
+  color: #bdbbbb;
   padding-bottom: 1ch;
 }
 
@@ -64,5 +69,24 @@ html {
 }
 
 #dateDisplay {
-  color:grey;
+  color: #bdbbbb;
+  margin-left: 2.5ch;
+  margin-right: 2.5ch;
+}
+
+#userNameDisplay{
+  margin-left: 2.5ch;
+}
+
+#userUserNameDisplay{
+  color: #bdbbbb
+}
+
+#postBody{
+  margin-left: 1ch;
+}
+
+#timelinePostComponent{
+  box-sizing: border-box;
+  padding-left: 1.5ch;
 }

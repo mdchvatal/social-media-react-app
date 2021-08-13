@@ -37,16 +37,27 @@ class Timeline extends Component {
         }
         return(
             <>
-                <div className="row col-md-5 offset-md-3">
-                    <AddPost addPost={this.props.addPost} fetchTimeline={this.props.fetchTimeline}/>
-                    {this.props.timelineData.timeline.map((message) => {
-                            return (
-                                <Post key={message.id}
-                                    message={message.message} 
-                                    date={message.date} 
-                                    user={message.user.userName}/>);
-                        }
-                    )}
+                <div className="row">
+                    <div className="col-md-5 offset-md-3" id="timelinePostComponent">
+                        <AddPost addPost={this.props.addPost} fetchTimeline={this.props.fetchTimeline}/>
+                        {this.props.timelineData.timeline.map((message) => {
+                                return (
+                                    <Post key={message.id} //integer id
+                                        message={message.message} //string
+                                        date={message.date} //string formatted as hh:mm dd/mm
+                                        userName={message.id && message.date && message.postingUser.userName} //From User object (postingUser)
+                                        name={message.id && message.date && message.postingUser.name}
+                                        likes={message.likes} //integer
+                                        numberOfLikes={message.numberOfLikes} // integer
+                                        comments={message.comments} //array of Comment objects
+                                        numberOfComments={message.numberOfComments} //integer value
+                                        />); 
+                            }
+                        )}
+                    </div>
+                    <div className="col-md-4">
+
+                    </div>
                 </div>
             </>
         );

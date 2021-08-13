@@ -52,7 +52,7 @@ class AddPost extends Component {
                         </CardBody>
                         <div className="container-fluid">
                             <div className="row flex">
-                                <Button type="submit" className="col-md-auto" id="semaphoreButton">Semaphore</Button>
+                                <Button type="submit" className="col-md-auto" id="semaphoreButton">Semaphore It</Button>
                             </div>
                         </div>
                         
