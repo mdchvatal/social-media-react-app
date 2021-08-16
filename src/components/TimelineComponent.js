@@ -28,12 +28,18 @@ class Timeline extends Component {
         }
     }
 
+    componentDidUpdate() {
+        if (this.props.messageData.status === 'succeeded') {
+            this.props.postComplete();
+        }
+    }
+
+
 
 
     render() {
         if (this.props.messageData.status === 'succeeded') {
             this.props.fetchTimeline();
-            this.props.postComplete();
         }
         return(
             <>

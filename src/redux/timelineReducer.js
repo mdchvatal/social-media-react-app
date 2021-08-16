@@ -5,11 +5,7 @@ export const TimelineData = (state = {
         status: 'idle',
         timeline: [{
             "id": 0,
-            "user": {
-                id: 0,
-                userName: " ",
-                name: " "
-            },
+            "user": {},
             "message": "Tell the world about anything!",
             "date": new Date().toLocaleDateString(),
             "comments": [],
